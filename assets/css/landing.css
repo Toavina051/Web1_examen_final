@@ -1,3 +1,7 @@
+:root{
+    font-family: 'Delius';
+}
+
 header{
     background-color: #ddb892;
     position: sticky;
