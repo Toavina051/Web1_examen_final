@@ -41,7 +41,7 @@ const startTest = (wordCount = 50) => {
     wordsToType.forEach((word, index) => {
         const span = document.createElement("span");
         span.textContent = word + " ";
-        if (index === 0) span.style.color = "red"; // Highlight first word
+        if (index === 0) span.style.color = "green"; // Highlight first word
         wordDisplay.appendChild(span);
     });
 
@@ -55,33 +55,38 @@ const startTimer = () => {
 };
 
 // Calculate and return WPM & accuracy
-const test = () => {
+const acc = () => {
     let prec = 0
-    //const color = document.createElement("color")
     for(let i = 0; i < wordsToType[currentWordIndex].length; i++){
         if (inputField.value[i] == wordsToType[currentWordIndex][i]) {
             prec += (100/wordsToType[currentWordIndex].length)
         }
-        /*if (inputField.value[i] != wordsToType[currentWordIndex][i]) {
-            wordsToType[currentWordIndex][i].color.style.color = "red"
-        }*/
     }
     return prec
 }
 const getCurrentStats = () => {
     const elapsedTime = (Date.now() - previousEndTime) / 1000; // Seconds
     const wpm = (wordsToType[currentWordIndex].length / 5) / (elapsedTime / 60); // 5 chars = 1 word
-    const accuracy = test()
+    const accuracy = acc()
     //const accuracy = (wordsToType[currentWordIndex].length / inputField.value.length) * 100;
 
     return { wpm: wpm.toFixed(2), accuracy: accuracy.toFixed(2) };
 };
+const total_accuracy = () => {
+    let sum = 0
+    for (let i = 0; i < wordsToType.length; i++){
+        sum += accuracy
+    }
+    return { total:(sum / wordsToType.length).toFixed(2) }
+}
+ 
 
 // Move to the next word and update stats only on spacebar press
 
 const updateWord = (event) => {
-    if (event.key === " " && inputField.value.length == wordsToType[currentWordIndex].length) { // Check if spacebar is pressed
+    if (event.key === " " && inputField.value.trim().length >= 2) { // Check if spacebar is pressed
         //if (inputField.value.trim() === wordsToType[currentWordIndex]) {
+            //}
             if (!previousEndTime) previousEndTime = startTime;
 
             const { wpm, accuracy } = getCurrentStats();
@@ -93,11 +98,10 @@ const updateWord = (event) => {
 
             inputField.value = ""; // Clear input field after space
             event.preventDefault(); // Prevent adding extra spaces
-        //}
     }
 };
 
-// Highlight the current word in red
+// Highlight the current word in green
 const highlightNextWord = () => {
     const wordElements = wordDisplay.children;
 
@@ -105,7 +109,7 @@ const highlightNextWord = () => {
         if (currentWordIndex > 0) {
             wordElements[currentWordIndex - 1].style.color = "black";
         }
-        wordElements[currentWordIndex].style.color = "red";
+        wordElements[currentWordIndex].style.color = "green";
     }
 };
 
