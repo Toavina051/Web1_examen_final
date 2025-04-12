@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/landing.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="script.js" defer></script>
+    <script src="assets/js/script.js" defer></script>
     <title>Typing Test - Easy Level</title>
 </head>
 <body>
@@ -24,7 +24,16 @@
             </div>  
         </nav>
     </header>
+    <div class="border-2 rounded-4xl border-black w-fit p-4 text-3xl text-amber-800">
+        <label for="mode">Select Mode:</label>
+        <select id="mode">
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+        </select>
+    </div>
     <main class="w-screen h-screen flex items-center justify-center flex-col gap-30">
+        
         <h1 class="text-8xl show-off text-white font-bold">Easy Level</h1>
         <div>
             <p class="text-8xl show-off text-white font-bold">Ready?</p>
@@ -44,22 +53,19 @@
         <div>
             <button class="bg-amber-900 p-10 rounded-2xl shadow-md hover:bg-white hover:border-2 hover:border-amber-900 hover:scale-110 hover:duration-500 text-white text-5xl hover:text-amber-900 hover:cursor-pointer hover:font-bold play_button">Start Now</button>
         </div>
-        <div class="flex">
-            <div class="px-5 flex gap-3">
-                <i>Time</i>
-                <p>40s</p>
-            </div>
+        <div class="px-5 flex gap-3 timer text-3xl">
+            <i>Time</i>
+            <p>40s</p>
+        </div>
+        <div class="flex flex-col"> 
             <div class="px-30 flex-col flex gap-20 justify-center">
-                <div class="text-to-type">
-                    <p class="text-4xl">grape cherry apple grape orange orange apple banana apple orange apple banana apple cherry 
-                        cherry cherry orange cherry grape orange apple cherry banana orange orange banana grape apple 
-                        cherry cherry orange grape cherry grape banana grape grape banana banana apple orange orange banana 
-                        grape cherry grape cherry cherry grape orange
-                    </p>
-                </div>
-                <div class="px-80">
-                    <input class="input-element p-5 text-white rounded-full w-200 outline-0 text-4xl" type="text" placeholder="Type here"/>
-                </div>
+                <div class="flex-col flex gap-20 justify-center items-center">
+                    <p id="word-display"></p>
+                    <div>
+                        <input class="input-element p-5 text-white rounded-full w-200 outline-0 text-4xl" type="text" id="input-field" placeholder="Type here" autofocus>
+                    </div>
+                    <p id="results">Results : </p>
+                </div>   
             </div>
         </div>
     </main>
