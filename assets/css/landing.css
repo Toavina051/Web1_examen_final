@@ -61,8 +61,25 @@ header{
     text-shadow: 5px 5px 20px #864d33;
 }
 
-input{
+.timer{
+    position: relative;
+    top: 6ch;
+    left: 45ch;
+}
+
+#word-display{
+    font-size: 40px;
+    border: 2px #864d33;
+    border-style: dashed;
+    padding: 3%;
+}
+
+#input-field{
     background-color: #ddb892;
+}
+
+#results{
+    font-size: 40px;
 }
 
 @keyframes updown{
