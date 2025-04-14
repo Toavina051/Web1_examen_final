@@ -1,3 +1,7 @@
+:root{
+    font-family: "Comic Neue", cursive;
+}
+
 header{
     background-color: #ddb892;
     position: sticky;
@@ -23,10 +27,17 @@ header{
     gap: 5ch;
 }
 
+.play_button-index{
+    animation: updown 1s ease-in-out alternate infinite;
+    padding: 2ch;
+    font-size: 60px;
+}
+
 .play_button{
     animation: updown 1s ease-in-out alternate infinite;
     padding: 2ch;
     font-size: 60px;
+    display: none;
 }
 
 .welcome-message{
@@ -57,14 +68,13 @@ header{
 }
 
 .show-off{
-    animation: fadeOut 2s ease-out forwards;
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 0;
     text-shadow: 5px 5px 20px #864d33;
-}
-
-.timer{
-    position: relative;
-    top: 6ch;
-    left: 45ch;
+    opacity: 0;
+    animation: fadeOut 2s ease-out forwards;
 }
 
 #word-display{
@@ -80,6 +90,48 @@ header{
 
 #results{
     font-size: 40px;
+}
+
+.container_show-off{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 75%;
+    z-index: 50;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.step1{
+    animation-delay: 0s;
+}
+
+.step2{
+    animation-delay: 2s;
+}
+
+.step3{
+    animation-delay: 4s;
+}
+
+.step4{
+    animation-delay: 6s;
+}
+
+.step5{
+    animation-delay: 8s;
+}
+
+.step6{
+    animation-delay: 10s;
+}
+
+.spin-around{
+    animation: spin 2s ease-in-out infinite;
 }
 
 @keyframes updown{
@@ -122,15 +174,28 @@ header{
 
 @keyframes fadeOut{
     0%{
-        opacity: 1;
-        transform: scale(0)
+        opacity: 0;
+        transform: scale(0);
     }
-    90% { 
+    30%{
+        opacity: 1;
+        transform: scale(1.2);
+    }
+    70% { 
         opacity: 1; 
+        transform: scale(1.3);
     }
     100%{
         transform: scale(1.5);
         opacity: 0;
-        display: none; 
+    }
+}
+
+@keyframes spin{
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(180deg);
     }
 }

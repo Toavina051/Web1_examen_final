@@ -123,3 +123,30 @@ modeSelect.addEventListener("change", () => startTest());
 
 // Start the test
 startTest();
+
+//Show the temporary numbers before the typing test beging
+setTimeout(()=>{
+    document.querySelector('.container_show-off').style.display = 'none';
+}, 12000);
+
+//Timer
+let counter = 40;
+//let time = counter * 60
+
+const timerDisplay = document.getElementById('timer');
+
+function countDown(){
+    //const minutes = Math.floor(time/60 );
+    //let seconds = time % 60;
+    //timerDisplay = `${minutes}:{seconds}`;
+    timerDisplay.innerHTML = `${counter}s`;
+    
+    if(counter <= 0){
+        clearInterval(timerDisplay);
+        timerDisplay.textContent = "Time's up";
+    }
+
+    counter--;
+}
+//const countInterval = 
+setInterval(countDown, 1000);

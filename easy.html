@@ -5,18 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/landing.css">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Delius&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="assets/js/script.js" defer></script>
     <title>Typing Test - Easy Level</title>
 </head>
 <body>
-    <header class="w-screen flex justify-center items-center bg-amber-800">
+    <header class="w-screen flex justify-center items-center bg-amber-800 h-10/12">
         <nav class="flex w-300 justify-evenly p-3">
             <div class="flex items-center gap-4">
                 <h1 class="text-3xl text-white font-bold">Typing test</h1>
             </div>
             <div>
-                <img class="h-18 w-18 rounded-4xl" src="assets/photo/Code & Caffeine_ Programmer Bear Crafting Kawaii Solutions Sticker.jpeg & Caffeine_ Programmer Bear Crafting Kawaii Solutions Sticker.jpeg" alt="">
+                <img class="h-18 w-18 rounded-4xl" src="assets/photo/logo.png" alt="">
             </div>
             <div class="flex gap-4">
                 <button class="bg-amber-900 rounded-2xl p-4 w-30 border-2 border-white text-white hover:bg-white hover:border-2 hover:scale-110 hover:duration-500 hover:text-amber-900 hover:cursor-pointer hover:font-bold" type="button">Sign in</button>
@@ -24,40 +25,43 @@
             </div>  
         </nav>
     </header>
-    <div class="border-2 rounded-4xl border-black w-fit p-4 text-3xl text-amber-800">
-        <label for="mode">Select Mode:</label>
-        <select id="mode">
-            <option value="easy">Easy</option>
-            <option value="medium">Medium</option>
-            <option value="hard">Hard</option>
-        </select>
-    </div>
-    <main class="w-screen h-screen flex items-center justify-center flex-col gap-30">
-        
-        <h1 class="text-8xl show-off text-white font-bold">Easy Level</h1>
-        <div>
-            <p class="text-8xl show-off text-white font-bold">Ready?</p>
+   
+    <main class="w-screen h-9/12 flex items-center justify-center flex-col gap-30">
+        <div class="container_show-off">
+            <div>
+                <p class="text-8xl show-off text-white font-bold step1">Ready?</p>
+            </div>
+            <div>
+                <p class="text-8xl show-off text-white font-bold step2">3</p>
+            </div>
+            <div>
+                <p class="text-8xl show-off text-white font-bold step3">2</p>
+            </div>
+            <div>
+                <p class="text-8xl show-off text-white font-bold step4">1</p>
+            </div>
+            <div>
+                <p class="text-8xl show-off text-white font-bold step5">GO !!</p>
+            </div>
+            <div>
+                <button class="bg-amber-900 p-10 rounded-2xl shadow-md hover:bg-white hover:border-2 hover:border-amber-900 hover:scale-110 hover:duration-500 text-white text-5xl hover:text-amber-900 hover:cursor-pointer hover:font-bold play_button">Start Now</button>
+            </div>
         </div>
-        <div>
-            <p class="text-8xl show-off text-white font-bold">3</p>
-        </div>
-        <div>
-            <p class="text-8xl show-off text-white font-bold">2</p>
-        </div>
-        <div>
-            <p class="text-8xl show-off text-white font-bold">1</p>
-        </div>
-        <div>
-            <p class="text-8xl show-off text-white font-bold">GO !!</p>
-        </div>
-        <div>
-            <button class="bg-amber-900 p-10 rounded-2xl shadow-md hover:bg-white hover:border-2 hover:border-amber-900 hover:scale-110 hover:duration-500 text-white text-5xl hover:text-amber-900 hover:cursor-pointer hover:font-bold play_button">Start Now</button>
-        </div>
-        <div class="px-5 flex gap-3 timer text-3xl">
-            <i>Time</i>
-            <p>40s</p>
-        </div>
-        <div class="flex flex-col"> 
+        <div class="flex flex-col gap-2"> 
+            <div class="flex justify-between w-screen px-10 items-center py-10">
+                <div class="border-2 rounded-4xl border-black w-fit p-4 text-3xl text-amber-800">
+                    <label for="mode">Select Mode:</label>
+                    <select id="mode">
+                        <option value="easy">Easy</option>
+                        <option value="medium">Medium</option>
+                        <option value="hard">Hard</option>
+                    </select>
+                </div>
+                <div class="flex gap-1 text-4xl items-center container-timer">
+                    <i class="fa-solid fa-hourglass-end spin-around"></i>
+                    <p id="timer" class="text-5xl"></p>
+                </div>
+            </div>
             <div class="px-30 flex-col flex gap-20 justify-center">
                 <div class="flex-col flex gap-20 justify-center items-center">
                     <p id="word-display"></p>

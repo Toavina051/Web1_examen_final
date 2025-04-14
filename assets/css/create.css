@@ -9,6 +9,7 @@
     --second-color: #542e1d;
     --third-color: #e6e3dd57;
     --text-color:black;
+    font-family: "Comic Neue", cursive;
 }
 body{
     color: var(--text-color);
