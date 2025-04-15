@@ -41,7 +41,7 @@ const startTest = (wordCount = 50) => {
     wordsToType.forEach((word, index) => {
         const span = document.createElement("span");
         span.textContent = word + " ";
-        if (index === 0) span.style.color = "green"; // Highlight first word
+        if (index === 0) span.style.color = "brown"; // Highlight first word
         wordDisplay.appendChild(span);
     });
 
@@ -101,23 +101,53 @@ const updateWord = (event) => {
     }
 };
 
+const updateLetterColors = () => {
+    const currentWord = wordsToType[currentWordIndex];
+
+    const wordSpan = wordDisplay.children[currentWordIndex];
+    wordSpan.innerHTML = "";
+
+    for (let i = 0; i < currentWord.length; i++) {
+        const letterSpan = document.createElement("span");
+        letterSpan.textContent = currentWord[i];
+
+        if (i < inputField.value.length) {
+            if (inputField.value[i] === wordsToType[currentWordIndex][i]) {
+                letterSpan.style.color = "green";
+            } else {
+                letterSpan.style.color = "red";
+            }
+        } else {
+            letterSpan.style.color = "brown"
+        }
+
+        wordSpan.appendChild(letterSpan);
+    }
+    wordSpan.append(" ");
+};
+
 // Highlight the current word in green
 const highlightNextWord = () => {
     const wordElements = wordDisplay.children;
 
     if (currentWordIndex < wordElements.length) {
         if (currentWordIndex > 0) {
-            wordElements[currentWordIndex - 1].style.color = "black";
+            wordElements[currentWordIndex - 1].style.color = "green";
         }
-        wordElements[currentWordIndex].style.color = "green";
+        wordElements[currentWordIndex].style.color = "brown";
     }
 };
 
 // Event listeners
 // Attach `updateWord` to `keydown` instead of `input`
+inputField.addEventListener("input", () => {
+    updateLetterColors();
+});
+
 inputField.addEventListener("keydown", (event) => {
     startTimer();
     updateWord(event);
+    updateLetterColors();
 });
 modeSelect.addEventListener("change", () => startTest());
 
