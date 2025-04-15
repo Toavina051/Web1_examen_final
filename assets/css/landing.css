@@ -2,22 +2,14 @@
     font-family: "Comic Neue", cursive;
 }
 
+/*Navbar*/
 header{
     background-color: #ddb892;
     position: sticky;
     top: 0;
 }
 
-.section-img-left{
-    width: 10vw;
-    animation: left 2s ease-in-out backwards alternate infinite;
-}
-
-.section-img-right{
-    width: 10vw;
-    animation: right 2s ease-in-out backwards alternate infinite;
-}
-
+/*Elements in index.html*/
 .main-bg-img{
     background-image: url(/assets/photo/bg.jpeg);
     background-size: cover;
@@ -33,13 +25,6 @@ header{
     font-size: 60px;
 }
 
-.play_button{
-    animation: updown 1s ease-in-out alternate infinite;
-    padding: 2ch;
-    font-size: 60px;
-    display: none;
-}
-
 .welcome-message{
     text-indent: 12ch;
     display: flex;
@@ -47,9 +32,28 @@ header{
     gap: 5ch;
 }
 
+.play_button{
+    animation: updown 1s ease-in-out alternate infinite;
+    padding: 2ch;
+    font-size: 60px;
+    display: none;
+}
+
+/* TO DELETE IF WE'LL DELETE LEVEL.HTML
+.section-img-left{
+    width: 10vw;
+    animation: left 2s ease-in-out backwards alternate infinite;
+}
+
+.section-img-right{
+    width: 10vw;
+    animation: right 2s ease-in-out backwards alternate infinite;
+}
+
 .level-text{
     animation: show 1s ease-in-out;
 }
+   
 
 .background{
     width: 30vw;
@@ -66,32 +70,10 @@ header{
     position: relative;
     bottom: 27ch;
 }
+     */
 
-.show-off{
-    position: absolute;
-    width: 100%;
-    top: 50%;
-    left: 0;
-    text-shadow: 5px 5px 20px #864d33;
-    opacity: 0;
-    animation: fadeOut 2s ease-out forwards;
-}
-
-#word-display{
-    font-size: 40px;
-    border: 2px #864d33;
-    border-style: dashed;
-    padding: 3%;
-}
-
-#input-field{
-    background-color: #ddb892;
-}
-
-#results{
-    font-size: 40px;
-}
-
+/*Elements in game.html*/
+/*Temporary messages*/
 .container_show-off{
     position: fixed;
     top: 0;
@@ -104,6 +86,16 @@ header{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.show-off{
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    text-shadow: 5px 5px 20px #864d33;
+    opacity: 0;
+    animation: fadeOut 2s ease-out forwards;
 }
 
 .step1{
@@ -130,8 +122,24 @@ header{
     animation-delay: 10s;
 }
 
+#word-display{
+    font-size: 40px;
+    border: 2px #864d33;
+    border-style: dashed;
+    padding: 3%;
+}
+
 .spin-around{
-    animation: spin 2s ease-in-out infinite;
+    animation: spin 1s ease-in-out infinite;
+}
+
+/*Game input*/
+#input-field{
+    background-color: #ddb892;
+}
+
+#results{
+    font-size: 40px;
 }
 
 @keyframes updown{
