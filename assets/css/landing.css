@@ -19,6 +19,27 @@ header{
     gap: 5ch;
 }
 
+.container_typing-text{
+    width: 30vw;
+    overflow: hidden;
+}
+
+.text{
+    position: relative;
+}
+
+.text.second-text:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;  
+    width: 100%;
+    height: 100%;
+    background-color: #FDE8C6;
+    border-left: 5px solid brown;
+    animation: animate 4s steps(12) infinite;
+}
+
 .play_button-index{
     animation: updown 1s ease-in-out alternate infinite;
     padding: 2ch;
@@ -74,12 +95,18 @@ header{
 
 /*Elements in game.html*/
 /*Temporary messages*/
+.main_game-bg{
+    position: fixed;
+    height: 100vh;
+    background-color: #FDE8C6;
+}
+
 .container_show-off{
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
-    height: 75%;
+    height: 100%;
     z-index: 50;
     text-align: center;
     display: flex;
@@ -103,23 +130,19 @@ header{
 }
 
 .step2{
-    animation-delay: 2s;
+    animation-delay: 1.5s;
 }
 
 .step3{
-    animation-delay: 4s;
+    animation-delay: 3s;
 }
 
 .step4{
-    animation-delay: 6s;
+    animation-delay: 4.5s;
 }
 
 .step5{
-    animation-delay: 8s;
-}
-
-.step6{
-    animation-delay: 10s;
+    animation-delay: 6s;
 }
 
 #word-display{
@@ -142,6 +165,15 @@ header{
     font-size: 40px;
 }
 
+@keyframes animate{
+    40%, 60%{
+        left: calc(100% + 4px);
+    }
+    100%{
+        left: 0% ;
+    }
+}
+
 @keyframes updown{
     from{
         transform: translateY(15px);
@@ -151,6 +183,7 @@ header{
     }
 }
 
+/*
 @keyframes show{
     0%{
         opacity: 0;
@@ -179,6 +212,7 @@ header{
         transform: translateX(0);
     }
 }
+    */
 
 @keyframes fadeOut{
     0%{
