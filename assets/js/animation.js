@@ -1,6 +1,8 @@
 //Show the temporary numbers before the typing test beging
+const containerShowOff = document.querySelector('.container_show-off');
+
 setTimeout(()=>{
-    document.querySelector('.container_show-off').style.display = 'none';
+    containerShowOff.style.display = 'none';
 }, 12000);
 
 //Timer
@@ -45,27 +47,29 @@ setInterval(textLoad, 1000);
 
 //Animation display in the game
 window.addEventListener('DOMContentLoaded', () => {
-    const playButton = document.querySelector('.play_button');
-    const typingArea = document.querySelector('#text-to-type');
-    const inputField = document.querySelector('#input-field');
-    
+const playButton = document.querySelector('.play_button');
+const typingArea = document.querySelector('#text-to-type');
+const inputField = document.querySelector('#input-field');
+
+typingArea.style.display = 'none';
+
+    playButton.addEventListener('click', ()=>{
+    playButton.style.display = 'none';
+
+    const steps = document.querySelectorAll('.show-off');
+    steps.forEach(step => step.style.opacity = 1);
+
+    document.body.style.overflow = 'hidden';
     typingArea.style.display = 'none';
-    
-        playButton.addEventListener('click', ()=>{
-        playButton.style.display = 'none';
-    
-        const steps = document.querySelectorAll('.show-off');
-        steps.forEach(step => step.style.opacity = 1);
-    
-        document.body.style.overflow = 'hidden';
-        typingArea.style.display = 'none';
-    
-        setTimeout(() => {
-            containerShowOff.style.display = 'none';
-            document.body.style.backgroundColor = '';
-            document.body.style.overflow = '';
-            typingArea.style.display = 'flex';
-            inputField.focus();
-        }, 6000);
-        });
-    })
+
+    setTimeout(() => {
+        containerShowOff.style.display = 'none';
+        document.body.style.backgroundColor = '';
+        document.body.style.overflow = '';
+        typingArea.style.display = 'flex';
+        inputField.focus();
+    }, 6000);
+    });
+})
+
+
