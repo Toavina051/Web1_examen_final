@@ -57,7 +57,6 @@ header{
     animation: updown 1s ease-in-out alternate infinite;
     padding: 2ch;
     font-size: 60px;
-    display: none;
 }
 
 /* TO DELETE IF WE'LL DELETE LEVEL.HTML
@@ -96,7 +95,6 @@ header{
 /*Elements in game.html*/
 /*Temporary messages*/
 .main_game-bg{
-    position: fixed;
     height: 100vh;
     background-color: #FDE8C6;
 }
