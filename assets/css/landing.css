@@ -101,6 +101,11 @@ header{
     background-color: #FDE8C6;
 }
 
+#mode:hover{
+    cursor: pointer;
+    transition: 5ms;
+}
+
 .container_show-off{
     position: fixed;
     top: 0;
