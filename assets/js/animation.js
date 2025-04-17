@@ -22,10 +22,26 @@ function countDown(){
         timerDisplay.textContent = "Time's up";
     }
 
-    counter--;
 }
+
+
+window.addEventListener('DOMContentLoaded', () => {
+    const input_test = document.querySelector('.input-element')
+    
+    input_test.addEventListener('input', () => {
+        setInterval(countDown, 2000);
+    })
+})
+
+window.addEventListener('DOMContentLoaded', () => {
+    const mod_button = document.querySelector('.select_mod')
+
+    mod_button.addEventListener('change', ()=>{
+        window.location.reload()
+    })
+})
 //const countInterval = 
-setInterval(countDown, 1000);
+//setInterval(countDown, 1000);
 
 //Typing text animation
 const text = document.querySelector(".second-text");
