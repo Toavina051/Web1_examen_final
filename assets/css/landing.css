@@ -46,6 +46,12 @@ header{
     font-size: 60px;
 }
 
+.explore_button{
+    animation: updownReverse 1s ease-in-out alternate infinite;
+    padding: 2ch;
+    font-size: 60px;
+}
+
 .welcome-message{
     text-indent: 12ch;
     display: flex;
@@ -183,6 +189,15 @@ header{
     }
     to{
         transform: translateY(0);
+    }
+}
+
+@keyframes updownReverse{
+    from{
+        transform: translateY(0px);
+    }
+    to{
+        transform: translateY(15px);
     }
 }
 
