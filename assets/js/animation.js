@@ -18,9 +18,13 @@ function countDown(){
     //timerDisplay = `${minutes}:{seconds}`;
     timerDisplay.innerHTML = `${counter}s`;
     
+    const time_out = document.querySelector('.input-element')
     if(counter <= 0){
         clearInterval(interval);
         timerDisplay.textContent = "Time's up";
+        if (time_out) {
+            time_out.classList.add('input-element1')
+        }
     }
     else{
         counter --
@@ -31,7 +35,7 @@ function countDown(){
 
 window.addEventListener('DOMContentLoaded', () => {
     const input_test = document.querySelector('.input-element')
-    
+
     input_test.addEventListener('input', () => {
         if (!interval) {    
             interval = setInterval(countDown, 1000);

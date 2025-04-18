@@ -90,7 +90,7 @@ const updateWord = (event) => {
             if (!previousEndTime) previousEndTime = startTime;
 
             const { wpm, accuracy } = getCurrentStats();
-            results.textContent = `WPM: ${wpm}, Accuracy: ${accuracy}%, Total: ${accuracy_total}%`;
+            results.textContent = `WPM: ${wpm}, Accuracy: ${accuracy}%, Average: ${accuracy_total}%`;
 
             currentWordIndex++;
             previousEndTime = Date.now();

@@ -226,3 +226,12 @@ header{
         transform: rotate(180deg);
     }
 }
+
+
+
+
+/*Remove input if timer = 0*/
+
+.input-element1{
+    display: none;
+}
