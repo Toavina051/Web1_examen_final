@@ -2,6 +2,10 @@
     font-family: "Comic Neue", cursive;
 }
 
+body{
+    overflow-x: hidden;
+}
+
 /*Navbar*/
 header{
     background-color: #ddb892;
@@ -14,8 +18,8 @@ header{
     background-image: url(/assets/photo/bg.jpeg);
     background-size: cover;
     background-repeat: no-repeat;
-    height: fit-content;
-    width: fit-content;
+    height: 100vh;
+    width: 100vw;
 }
 
 .logo-name{
@@ -91,6 +95,92 @@ header{
     -webkit-background-clip: text;
     color: transparent;
     display: inline-block;
+}
+
+.slider{
+    height: 250px;
+    margin: 5%;
+    position: relative;
+    width: 90vw;
+    display: grid;
+    place-items: center;
+    overflow-x: hidden;
+}
+
+.slide-track{
+    display: flex;
+    width: calc(300px * 10);
+    animation: scrollImage 10s linear infinite;
+}
+
+.slide-track:hover{
+    animation-play-state: paused;
+}
+
+.slide{
+    height: 200px;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    perspective: 100px;
+}
+
+.slide img{
+    width: 100%;
+    transition: transform 1s;
+    border: 2px solid #5A3D2E;
+    border-radius: 5px;
+}
+
+.slide img:hover{
+    transform: translateZ(20px);
+}
+
+.slider::before, .slider::after{
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.5) 0%,
+    rgba(255, 255, 255, 0) 100%);
+    content: '';
+    height: 100%;
+    position: absolute;
+    width: 10%;
+    z-index: 2;
+}
+
+.slider::before{
+    left: 0;
+    top: 0;
+}
+
+.slider::after{
+    right: 0;
+    top: 0;
+    transform: rotateZ(180deg);
+}
+
+/*Statistics*/
+.counter{
+    background-color: #ddb892;
+}
+
+.joining{
+    background-color: #ddb892;
+    border: 2px solid white;
+    position: relative;
+    margin-inline: 25%;
+    text-align: center;
+}
+
+.send-message{
+    margin-inline: 8%;
+}
+
+/*footer*/
+hr{
+    width: 60vw;
+    height: 10px;
+    position: relative;
+    left: 20%;
+    color: #864d33;
 }
 
 /*Elements in game.html*/
@@ -172,6 +262,7 @@ header{
     font-size: 40px;
 }
 
+/*Keyframes in index.html*/
 @keyframes animate{
     40%, 60%{
         left: calc(100% + 4px);
@@ -199,6 +290,16 @@ header{
     }
 }
 
+@keyframes scrollImage{
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(calc(-250px * 5));
+    }
+}
+
+/*Keyframes in game.html*/
 @keyframes fadeOut{
     0%{
         opacity: 0;
