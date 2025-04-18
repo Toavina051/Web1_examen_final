@@ -218,27 +218,33 @@ hr{
     left: 0;
     text-shadow: 3px 3px 10px #864d33;
     opacity: 0;
-    animation: fadeOut 2s ease-out forwards;
+    animation: fadeOut 1.5s ease-out forwards;
+    pointer-events: none;
 }
 
 .step1{
     animation-delay: 0s;
+    animation-fill-mode: forwards;
 }
 
 .step2{
     animation-delay: 1.5s;
+    animation-fill-mode: forwards;
 }
 
 .step3{
     animation-delay: 3s;
+    animation-fill-mode: forwards;
 }
 
 .step4{
     animation-delay: 4.5s;
+    animation-fill-mode: forwards;
 }
 
 .step5{
     animation-delay: 6s;
+    animation-fill-mode: forwards;
 }
 
 #word-display{
