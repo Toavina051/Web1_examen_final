@@ -98,4 +98,53 @@ typingArea.style.display = 'none';
     });
 })
 
+//Data counter
+document.addEventListener("DOMContentLoaded", () => {
+    const containerCounter = document.querySelector('.container-counter');
+    const counters = containerCounter.querySelectorAll('.counter span');
 
+let activated = false;
+
+function animateCounters(){
+    counters.forEach(counter => {
+        counter.innerText = 0;
+        let count = 0;
+        const target = parseInt(counter.dataset.count);
+        const increment = Math.ceil(target/100);
+
+        function updateCount(){
+            count += increment;
+            if(count < target){
+                counter.innerText = count;
+                setTimeout(updateCount, 20);
+            } else {
+                counter.innerText = target;
+            }
+        }
+        updateCount();
+    });
+}
+
+function resetCounters(){
+    counters.forEach(counter => {
+        counter.innerText = 0;
+    });
+}
+
+window.addEventListener("scroll", () => {
+    const containerTop = containerCounter.offsetTop;
+    const containerBottom = containerTop + containerCounter.offsetHeight;
+    const scrollY = window.scrollY;
+    const windowHeight = window.innerHeight;
+
+    const containerVisible = scrollY + windowHeight > containerTop && scrollY < containerBottom;
+
+    if(containerVisible && !activated){
+        animateCounters();
+        activated = true;
+    } else if (!containerVisible && activated){
+        resetCounters();
+        activated = false;
+    }
+});
+});
