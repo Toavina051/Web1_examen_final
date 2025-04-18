@@ -10,13 +10,13 @@
     <link rel="icon" type="image" href="assets/photo/Code & Caffeine_ Programmer Bear Crafting Kawaii Solutions Sticker.jpeg">
     <link rel="shortcut icon" href="assets/photo/logo.png" type="image/x-icon">
     <script src="assets/js/animation.js"></script>
-    <title>Typing Test</title>
+    <title>TypeFlow</title>
 </head>
 <body>
     <header class="w-screen flex justify-center items-center bg-amber-800">
         <nav class="flex w-300 justify-evenly p-3">
             <div class="flex items-center gap-4">
-                <h1 class="text-5xl text-white font-bold">Type<span class="text-amber-800 italic">Flow</span</h1>
+                <h1 class="text-5xl text-white font-bold logo-name">Type<span class="text-amber-800 italic">Flow</span</h1>
             </div>
             <div>
                 <img class="h-18 w-18 rounded-4xl" src="assets/photo/logo.png" alt="">
@@ -27,24 +27,42 @@
             </div>  
         </nav>
     </header>
-    <main class= "flex w-screen h-screen justify-center items-center p-50 flex-col main-bg-img">
-        <div class="animate-fade-in-scale welcome-message">
-            <div class="container_typing-text">
-                <h2 class="font-bold text-6xl text second-text text-left">Welcome, player!</h2>
+    <main class= "w-screen h-screen main-bg-img flex flex-col gap-10">
+        <div class="top_main flex flex-col justify-center items-center px-40 py-30">
+            <div class="animate-fade-in-scale welcome-message text-center">
+                <div class="container_typing-text">
+                    <h2 class="font-bold text-6xl text body-text text-center">Welcome, player!</h2>
+                </div>
+                <div class="text-5xl leading-20 indent-20">
+                    <p>Are you ready to test your typing speed ?</p>
+                    <p>Whether you want to improve your typing skills or just wanted to visit the site, click one of the button below to get started, and have fun!</p>
+                </div>
             </div>
-            <div class="text-5xl leading-20 indent-20">
-                <p>Are you ready to test your typing speed ?</p>
-                <p>Whether you want to improve your typing skills or just wanted to visit the site, click one of the button below to get started, and have fun!</p>
+            <div class="flex gap-10">
+                <div class="bg-amber-900 p-5 rounded-2xl shadow-md hover:bg-white hover:border-2 hover:border-amber-900 hover:scale-110 hover:duration-500 text-white text-5xl hover:text-amber-900 hover:cursor-pointer hover:font-bold play_button-index">
+                    <i class="fa-regular fa-circle-play"></i>
+                    <button type="button">Play now</button>
+                </div>
+                <div class="bg-white border-amber-900 p-5 w-auto rounded-2xl text-5xl hover:bg-amber-900 hover:border-2 hover:border-amber-900 hover:scale-110 hover:duration-500 text-amber-900 hover:text-white hover:cursor-pointer hover:font-bold explore_button">
+                    <button type="button">Explore</button>
+                </div>
             </div>
         </div>
-        <div class="flex gap-10">
-            <div class="bg-amber-900 p-5 rounded-2xl shadow-md hover:bg-white hover:border-2 hover:border-amber-900 hover:scale-110 hover:duration-500 text-white text-5xl hover:text-amber-900 hover:cursor-pointer hover:font-bold play_button-index">
-                <i class="fa-regular fa-circle-play"></i>
-                <button type="button">Play now</button>
+        <div class="get-ready w-screen flex justify-around">
+            <div class="w-1/2">
+                <h2 class="text-5xl font-bold w-6xl">GET READY TO ENJOY <span class="specified-color">TYPING WITH OUR PLATFORM <i class="fa-solid fa-rocket"></i></span></h2>
+                <p class="text-4xl leading-20"><span class="text-5xl text-white font-bold">Type</span><span class="text-5xl text-amber-800 font-bold italic">Flow</span>
+                is a typing game, specifically designed to improve your typing speed and accuracy. Its cute and pleasant interface creates an authentic atmosphere while you type.</p>
             </div>
-            <div class="bg-white border-amber-900 p-5 w-auto rounded-2xl text-5xl hover:bg-amber-900 hover:border-2 hover:border-amber-900 hover:scale-110 hover:duration-500 text-amber-900 hover:text-white hover:cursor-pointer hover:font-bold explore_button">
-                <button type="button">Explore</button>
+            <div class="w-1/4">
+                <img class="size-100" src="/assets/photo/jpeg(48)" alt="">
             </div>
+        </div>
+        <div class="px-80">
+            <h2 class="text-5xl font-bold w-7xl text-center">THE BEST <span class="specified-color">TRAINING</span> FOR YOUR ABILITIES</h2>
+            <p class="text-4xl leading-20 w-7xl text-center">We measure your ability by your typing skills. And we have a range of levels,
+                a timer to keep track of your time, and a final result of your typing for every level's end to help you progress.
+            </p>
         </div>
     </main>
 </body>
