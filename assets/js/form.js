@@ -1,3 +1,5 @@
+import { username } from "./create.js"
+import { password } from "./create.js"
 window.addEventListener("DOMContentLoaded", function(){
     const mail = "test@gmail.com"
     const pswd = "1234"
@@ -19,7 +21,7 @@ window.addEventListener("DOMContentLoaded", function(){
             },10)
             setTimeout(() => {
                if (document.querySelector(".mail").value === mail && document.querySelector(".password").value ===  pswd) {
-                    window.location.href = "./index.html"
+                    window.location.href = "./game.html"
                 }
                 else{
                     bouton.innerHTML = "Login now"

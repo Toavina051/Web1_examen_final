@@ -7,6 +7,7 @@ setTimeout(()=>{
 
 //Timer
 let counter = 40;
+let interval = null
 //let time = counter * 60
 
 const timerDisplay = document.getElementById('timer');
@@ -18,8 +19,11 @@ function countDown(){
     timerDisplay.innerHTML = `${counter}s`;
     
     if(counter <= 0){
-        clearInterval(timerDisplay);
+        clearInterval(interval);
         timerDisplay.textContent = "Time's up";
+    }
+    else{
+        counter --
     }
 
 }
@@ -29,17 +33,19 @@ window.addEventListener('DOMContentLoaded', () => {
     const input_test = document.querySelector('.input-element')
     
     input_test.addEventListener('input', () => {
-        setInterval(countDown, 2000);
+        if (!interval) {    
+            interval = setInterval(countDown, 1000);
+        }
     })
 })
 
-window.addEventListener('DOMContentLoaded', () => {
+/*window.addEventListener('DOMContentLoaded', () => {
     const mod_button = document.querySelector('.select_mod')
 
     mod_button.addEventListener('change', ()=>{
         window.location.reload()
     })
-})
+})*/
 //const countInterval = 
 //setInterval(countDown, 1000);
 

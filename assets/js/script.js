@@ -72,25 +72,25 @@ const getCurrentStats = () => {
 
     return { wpm: wpm.toFixed(2), accuracy: accuracy.toFixed(2) };
 };
-const total_accuracy = () => {
-    let sum = 0
-    for (let i = 0; i < wordsToType.length; i++){
-        sum += accuracy
-    }
-    return { total:(sum / wordsToType.length).toFixed(2) }
-}
- 
 
+
+
+let sum = 0
+let total = 0
+let accuracy_total = 0
 // Move to the next word and update stats only on spacebar press
 
 const updateWord = (event) => {
-    if (event.key === " " && inputField.value.trim().length >= 2) { // Check if spacebar is pressed
+    if (event.key === " " && inputField.value.trim().length >= 1) { // Check if spacebar is pressed
         //if (inputField.value.trim() === wordsToType[currentWordIndex]) {
             //}
+            sum ++
+            total += acc()
+            accuracy_total = (total/sum).toFixed(2)
             if (!previousEndTime) previousEndTime = startTime;
 
             const { wpm, accuracy } = getCurrentStats();
-            results.textContent = `WPM: ${wpm}, Accuracy: ${accuracy}%`;
+            results.textContent = `WPM: ${wpm}, Accuracy: ${accuracy}%, Total: ${accuracy_total}%`;
 
             currentWordIndex++;
             previousEndTime = Date.now();
