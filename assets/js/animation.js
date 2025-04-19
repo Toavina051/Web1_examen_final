@@ -19,11 +19,14 @@ function countDown(){
     timerDisplay.innerHTML = `${counter}s`;
     
     const time_out = document.querySelector('.input-element')
+    const restart = document.querySelector('.final_button')
     if(counter <= 0){
         clearInterval(interval);
         timerDisplay.textContent = "Time's up";
         if (time_out) {
             time_out.classList.add('input-element1')
+            restart.classList.add('final_button1')
+            restart.addEventListener('click', () => window.location.href = "./game.html")
         }
     }
     else{
@@ -31,6 +34,7 @@ function countDown(){
     }
 
 }
+
 
 
 window.addEventListener('DOMContentLoaded', () => {
