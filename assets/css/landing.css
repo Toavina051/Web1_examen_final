@@ -353,20 +353,7 @@ hr{
     animation-timeline: view();
     animation-range: entry 0;
 }
-.container-top_scroll{
-    transition: 1000ms;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 9999;
-    width: 100%;
-    position: fixed;
-    margin-top: 0;
-    height: 10vh;
-    border-radius: 5px;
-    padding: 20px;
-}
+
 
 
 
